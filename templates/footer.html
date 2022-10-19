@@ -1,0 +1,13 @@
+{% load static %}
+
+<section class="pt-2 pb-2 pt-lg-4 pb-lg-4 footer_new {% if active_subs|length == 4%} fixed-bottom w-100 {% endif %}" style="background: orange;">
+  <div class="container p-lg-0">
+    <div class="row mx-md-n5">
+      <div class="col px-md-5"><a style="color: white;" href="{% url 'about_us' %}" class="text-decoration-none text-capitalize">About us</a></div>
+      <div class="col px-md-5"><a style="color: white;" href="{% url 'contact_us' %}" class="text-decoration-none text-capitalize">Contact Us</a></div>
+      <div class="col px-md-5"><a style="color: white;" href="{% url 'privacy' %}" class="text-decoration-none text-capitalize">Privacy Policy</a></div>
+      <div class="col px-md-5"><a style="color: white;" href="{% url 'error' %}" class="text-decoration-none text-capitalize">Cookies</a></div>
+      <div class="col px-md-5"><a style="color: white;" href="{% url 'error' %}" class="text-decoration-none text-capitalize">Archive</a></div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,120 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block meta %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">   
+{% endblock %}
+
+{% block stylesheets %}
+<link rel="canonical" href="https://{{request.get_host}}{{request.get_full_path}}"/>
+<link rel="stylesheet" href="{% static 'base.css' %}"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+<link rel="stylesheet" href="{%static 'css/index.css' %}">
+<link rel="stylesheet" href="{%static 'css/contact_us.css' %}">
+<link rel="stylesheet" href="{%static 'css/contact_us_module.css' %}">
+<link rel="stylesheet" href="{%static 'css/contact_us_module_form.css' %}">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Faustina:wght@600&display=swap">
+{% endblock %}
+
+{% block title %}
+Contact Us
+{% endblock %}
+
+{% block navbar %}
+    {% include "navbar.html" %}  
+{% endblock %}
+
+{% block body %}
+<div class="pricing-header mx-auto text-center">
+    <br>
+    <img src="{% static 'images/logo.png' %}" alt="Logo">
+    <hr>
+</div>
+
+<div id="wrapper" class="solid-form">
+    <section class="solid-form" id="form-container">
+        <div class="l-container w-80" id="solid-form-container">
+            <div class="l-row">
+                <div class="l-col-12 pad-0">
+                    <div class="form-header">
+                        <h1 class="margin-bottom-0"> GET IN TOUCH </h1>
+                        <span> We are always listening to your queries. </span>
+                    </div>
+                    <div class="form-body">
+                        <form action="/contactus/" id="solid-form" method="POST" novalidate="novalidate" class="ng-pristine ng-valid">
+                            {% csrf_token %}
+                            <div class="row d-flex justify-content-around">
+                                <div class="l-col-6">
+                                    <div class="l-row">
+                                        <div class="l-col-12 pad-0">
+                                            <div class="form-group">
+                                                <div class="l-pos-r">
+                                                    <input type="text" class="form-element form-element-icon" id="fullname" name="fullname" placeholder="Your Full Name" required>
+                                                    <i class="fa fa-user fa-absolute fa-background"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="l-row">
+                                        <div class="l-col-12 pad-0">
+                                            <div class="form-group">
+                                                <div class="l-pos-r">
+                                                    <input type="text" class="form-element form-element-icon" id="phone" name="phone" placeholder="Your Contact No." required>
+                                                    <i class="fa fa-phone fa-absolute fa-background"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="l-row">
+                                        <div class="l-col-12 pad-0">
+                                            <div class="form-group">
+                                                <div class="l-pos-r">
+                                                    <input type="text" class="form-element form-element-icon" id="email" name="email" placeholder="Your E-mail" required>
+                                                    <i class="fa fa-envelope fa-absolute fa-background"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="l-row">
+                                        <div class="l-col-12 pad-0">
+                                            <div class="form-group">
+                                                <div class="l-pos-r">
+                                                    <input type="text" class="form-element form-element-icon" id="subject" name="subject" placeholder="Your Subject" required>
+                                                    <i class="fa fa-comment fa-absolute fa-background"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                     </div>
+                                    <div class="l-row">
+                                        <div class="l-col-12 pad-0">
+                                            <div class="form-group form-group-textarea">
+                                                <div class="l-pos-r">
+                                                    <textarea rows="5" class="form-element form-element-icon" id="comments" name="comments" placeholder="Your Message" required></textarea>
+                                                    <i class="fa fa-comment fa-absolute fa-background"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                     </div>
+                                     <h3 class="form-error" style="color:red;">{{message}}</h3>
+                                    <div class="l-row">
+                                        <div class="l-col-12 pad-0">
+                                            <div class="form-group">
+                                                <div class="form-group">
+                                                    <input type="submit" value="SEND" id="submit" name="submit" class="btn btn-success btn-flat l-inline-block l-float-right w-40 margin-0" onclick="return checkForm()">
+                                                </div>
+                                            </div>
+                                        </div>
+                                     </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+           </div>
+        </div>
+    </section> 
+    <br>
+<hr>
+{% include "footer.html"%}
+{% endblock %}

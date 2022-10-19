@@ -1,0 +1,14 @@
+{% load static %}
+
+<nav>
+  <section class="pt-2 pb-2 pt-lg-4 pb-lg-4 footer_new {% if active_subs|length == 4%} fixed-bottom w-100 {% endif %}" style="background: black;">
+    <div class="container p-lg-0">
+      <div class="row mx-md-n5">
+        <div class="col px-md-5"><a style="color: white;" href="{% url 'homepage' %}" class="text-decoration-none text-capitalize">Home</a></div>
+        <div class="col px-md-5"><a style="color: white;" href="{% url 'add_phone' %}" class="text-decoration-none text-capitalize">Add Phones</a></div>
+        <div class="col px-md-5"><a style="color: white;" href="{% url 'list_phone' %}" class="text-decoration-none text-capitalize">List Phones</a></div>
+        <div class="col px-md-5"><a style="color: white;" href="/logout/" class="text-decoration-none text-capitalize">Logout</a></div>
+      </div>
+    </div>
+  </section>
+</nav>
