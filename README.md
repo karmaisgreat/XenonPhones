@@ -18,6 +18,11 @@
 ## Admin login URL:-
 - 127.0.0.1/admin
 
+## Heroku Deploy:-
+- URL: https://xenonphones.herokuapp.com/
+- Django-Admin Username: admin
+- Django-Admin Password: 123456
+
 ## Screenshots:-
 
 ### Login:-
